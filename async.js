@@ -21,10 +21,11 @@
 //Executes a function a set time (in ms) after it's called.
 //Once setTimeout is called the script after it will continue to execute. After the timeout the setTimeout's passed in function will execute.
 
+/*
 const second = () => {
     setTimeout(() => {
         console.log("Well, I hope?")
-    }, 5000)
+    }, 1000)
     };
 
 const first = () => {
@@ -34,5 +35,82 @@ const first = () => {
 };
 
 first ();
+*/
+
 
 //We're really just looking at this as an example of as asynchronous method. Promises ans Async/Await are much more relevant, and are used to requrest API data without blocking the JS script.
+
+//////////////////////////////////////////////////////////////
+//A model of an asynchronous method
+
+//The function below gives data (recipes specifically) after a specific time period. Asynchronous JS methods allow this datat to be provided after the script has executed. We're using this to represent a request to a server, which would have a time delay; it would behave similarly and have similar structure, except the setTimeout function would be replaced with a promise or comparable method.
+
+/*
+function getRecipe() {
+    setTimeout(() => {
+        const recipeIDs = [1, 2, 3, 4];
+        console.log(recipeIDs);
+        setTimeout(id => {
+            const recipe = {
+                title: 'Spaghetti',
+                publisher: 'Tseng'
+            };
+            console.log(`Recipe ${id}: ${recipe.title}.`);
+
+            setTimeout(publisher => {
+                const recipe2 = {
+                    title: 'Pizza',
+                    publisher: 'Tseng'
+                };
+                console.log(recipe);
+            }, 1500, recpie.publisher);
+
+        }, 1500, recipeIDs[2]);
+    }, 2000);
+};
+
+getRecipe();
+*/
+
+//Observe the triangular shape. It's the
+/*
+ P
+  Y
+   R
+    A
+     M
+      I
+       D
+
+      O
+     F
+
+   D
+  O
+ O
+M
+*/
+
+// Nested asynchronous functions are notioriously tirkcy to manage. They get really confusing. Newer approaches have been developed that manage sequential conditional events without such ridiculous nesting. We'll look at thes enow.
+
+
+///////////////////////////////////////////////////////////
+// Promises
+
+// To summarise, a Promise is an asynchronous method that:
+//  1. Monitors whether a specified event has happened yet or not.
+//  2. Determines what should happen after the event has happened.
+
+
+// A Promise can have various states.
+//  1. Pending : The event has not yet happened.
+//  2. Resolved: The event has happened with one of two outcomes:
+//          2A: Fulfilled: The requested data was reurned.
+//          2B: Rejected:  The requested data waas not returned
+//              (eg. because of an error). 
+
+// The Promise resolves different callback functions depending on the Pormise's state/outcome. 
+
+const getRecipeIDs = new Promise(() => {
+
+})

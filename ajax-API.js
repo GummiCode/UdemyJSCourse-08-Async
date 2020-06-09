@@ -69,7 +69,7 @@ function getWeather(woeid) {
       const locale = data.parent.title;
       console.log(`Welcome to ${locale}! Today the weather will be ${today}.`);
     })
-    .catch((error) => console.log("Error!"));
+    .catch((error) => console.log(error));
 }
 
 getWeather(woeidCalifornia);

@@ -52,7 +52,7 @@
 // The fetched data is in JSON format. We can convert it to JS using the super convenient .json method. This returns a promise, so we'll also need to process the output of that using then/catch or async/await.
 
 const woeidCalifornia = 2487956;
-const woeidLondon = 444418;
+const woeidLondon = 44418;
 
 function getWeather(woeid) {
   fetch(
@@ -74,6 +74,4 @@ function getWeather(woeid) {
 
 getWeather(woeidCalifornia);
 getWeather(woeidLondon);
-
-// Now that the data is nabbed you can see what the location is! o take a look :3
 
